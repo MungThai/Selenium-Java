@@ -23,7 +23,8 @@
         <log4j-version>2.24.2</log4j-version>
         <extentreports-version>5.1.2</extentreports-version>
         <monte-screen-recorder-version>17.1</monte-screen-recorder-version>
-        <java-compiler-version>3.13.0</java-compiler-version>
+        <java-compiler-plugin-version>3.13.0</java-compiler-plugin-version>
+        <maven-javadoc-plugin-version>3.11.1</maven-javadoc-plugin-version>
         <maven-surefire-plugin-version>3.5.2</maven-surefire-plugin-version>
         <mysql-connector-j-version>9.1.0</mysql-connector-j-version>
         <mysql-connector-java-version>8.0.33</mysql-connector-java-version>
@@ -177,6 +178,11 @@
             <version>${lombok-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>${java-compiler-plugin-version}</version>
+        </dependency>
 
     </dependencies>
 
@@ -186,10 +192,9 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-compiler-plugin</artifactId>
-                    <version>3.13.0</version>
                     <configuration>
-                        <source>${java-compiler-version}</source>
-                        <target>${java-compiler-version}</target>
+                        <source>${maven.compiler.source}</source>
+                        <target>${maven.compiler.target}</target>
                     </configuration>
                 </plugin>
 
@@ -214,9 +219,9 @@
                 <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-javadoc-plugin</artifactId>
-                    <version>3.6.3</version>
+                    <version>${maven-javadoc-plugin-version}</version>
                     <configuration>
-                        <source>${java-compiler-version}</source>
+                        <source>${maven-javadoc-plugin-version}</source>
                         <encoding>UTF-8</encoding>
                     </configuration>
 

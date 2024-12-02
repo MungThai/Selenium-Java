@@ -19,16 +19,16 @@ out/
 .allure/
 allure-results/
 exportdata/
+log4j2/
 extentreports/
 logs/
-log4j2/
-*.log
 target/
 test-output/
 reports/
 *.mp4
 *.avi
 allure-report/
+**/*.log
 
 ### Eclipse ###
 .apt_generated

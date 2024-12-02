@@ -1,0 +1,10 @@
+{
+  "name": "Jenkins",
+  "type": "jenkins",
+  "url": "https://opensource-demo.orangehrmlive.com/web/index.php/auth/login",
+  "buildOrder": 1,
+  "buildName": "Allure Report Customize | Mung Tester",
+  "buildUrl": "https://github.com/MungThai/selenium-java/tree/master",
+  "reportUrl": "https://localhost:5000/reportportal",
+  "reportName": "Allure Report Customize | Mung Tester"
+}
