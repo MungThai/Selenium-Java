@@ -194,3 +194,67 @@
 [INFO ] 2024-12-02 10:06:42.341 [TestNG-test-Login Test HRM-4] LogUtils - Screenshot taken current URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
 [INFO ] 2024-12-02 10:06:43.055 [main] LogUtils - ********** RUN FINISHED **********
 [INFO ] 2024-12-02 10:06:43.056 [main] LogUtils - =====> End Suite: Regression Tests CMS
+[INFO ] 2024-12-02 10:15:46.309 [main] LogUtils - Loaded all properties files.
+[INFO ] 2024-12-02 10:15:46.352 [main] LogUtils - ********** RUN STARTED **********
+[INFO ] 2024-12-02 10:15:46.353 [main] LogUtils - ========= INSTALLING CONFIGURATION DATA =========
+[INFO ] 2024-12-02 10:15:46.354 [main] LogUtils - Loaded all properties files.
+[INFO ] 2024-12-02 10:15:46.515 [main] LogUtils - OVERRIDE EXTENT REPORTS = yes
+[INFO ] 2024-12-02 10:15:46.515 [main] LogUtils - Link Extent Report: H:\github\Selenium-Java\reports/extentreports\extentreports.html
+[INFO ] 2024-12-02 10:15:46.664 [main] LogUtils - Extent Reports is installed.
+[INFO ] 2024-12-02 10:15:46.665 [main] LogUtils - ========= INSTALLED CONFIGURATION DATA =========
+[INFO ] 2024-12-02 10:15:46.665 [main] LogUtils - =====> Starting Suite: Regression Tests CMS
+[INFO ] 2024-12-02 10:15:50.284 [TestNG-test-Login Test HRM-1] LogUtils - Test case: TC_loginFailWithEmptyUsername is starting...
+[INFO ] 2024-12-02 10:15:50.284 [TestNG-test-Login Test HRM-4] LogUtils - Test case: TC_loginFailWithInvalidPassword is starting...
+[INFO ] 2024-12-02 10:15:50.284 [TestNG-test-Login Test HRM-3] LogUtils - Test case: TC_loginFailWithInvalidUsername is starting...
+[INFO ] 2024-12-02 10:15:50.284 [TestNG-test-Login Test HRM-5] LogUtils - Test case: TC_loginSuccess is starting...
+[INFO ] 2024-12-02 10:15:50.284 [TestNG-test-Login Test HRM-2] LogUtils - Test case: TC_loginFailWithEmptyPassword is starting...
+[INFO ] 2024-12-02 10:15:50.403 [TestNG-test-Login Test HRM-4] LogUtils - Login failed with invalid password
+[INFO ] 2024-12-02 10:15:50.403 [TestNG-test-Login Test HRM-2] LogUtils - Login failed with empty password
+[INFO ] 2024-12-02 10:15:50.403 [TestNG-test-Login Test HRM-3] LogUtils - Login failed  with invalid username
+[INFO ] 2024-12-02 10:15:50.403 [TestNG-test-Login Test HRM-1] LogUtils - Login failed with empty username
+[INFO ] 2024-12-02 10:15:51.569 [TestNG-test-Login Test HRM-1] LogUtils - Open website with URL: https://opensource-demo.orangehrmlive.com/
+[INFO ] 2024-12-02 10:15:51.616 [TestNG-test-Login Test HRM-2] LogUtils - Open website with URL: https://opensource-demo.orangehrmlive.com/
+[INFO ] 2024-12-02 10:15:51.617 [TestNG-test-Login Test HRM-4] LogUtils - Open website with URL: https://opensource-demo.orangehrmlive.com/
+[INFO ] 2024-12-02 10:15:51.700 [TestNG-test-Login Test HRM-3] LogUtils - Open website with URL: https://opensource-demo.orangehrmlive.com/
+[INFO ] 2024-12-02 10:15:51.779 [TestNG-test-Login Test HRM-5] LogUtils - Open website with URL: https://opensource-demo.orangehrmlive.com/
+[INFO ] 2024-12-02 10:15:52.753 [TestNG-test-Login Test HRM-2] LogUtils - Set text Admin  on By.name: username
+[INFO ] 2024-12-02 10:15:52.780 [TestNG-test-Login Test HRM-3] LogUtils - Set text QA on By.name: username
+[INFO ] 2024-12-02 10:15:52.785 [TestNG-test-Login Test HRM-4] LogUtils - Set text Admin on By.name: username
+[INFO ] 2024-12-02 10:15:52.790 [TestNG-test-Login Test HRM-1] LogUtils - Set text   on By.name: username
+[INFO ] 2024-12-02 10:15:52.845 [TestNG-test-Login Test HRM-5] LogUtils - Set text Admin on By.name: username
+[INFO ] 2024-12-02 10:15:52.953 [TestNG-test-Login Test HRM-2] LogUtils - Set text   on By.name: password
+[INFO ] 2024-12-02 10:15:53.020 [TestNG-test-Login Test HRM-1] LogUtils - Set text password on By.name: password
+[INFO ] 2024-12-02 10:15:53.034 [TestNG-test-Login Test HRM-3] LogUtils - Set text admin123 on By.name: password
+[INFO ] 2024-12-02 10:15:53.074 [TestNG-test-Login Test HRM-5] LogUtils - Set text admin123 on By.name: password
+[INFO ] 2024-12-02 10:15:53.133 [TestNG-test-Login Test HRM-4] LogUtils - Set text invalidPassword on By.name: password
+[INFO ] 2024-12-02 10:15:53.193 [TestNG-test-Login Test HRM-2] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.216 [TestNG-test-Login Test HRM-1] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.251 [TestNG-test-Login Test HRM-5] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.319 [TestNG-test-Login Test HRM-4] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.381 [TestNG-test-Login Test HRM-2] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.387 [TestNG-test-Login Test HRM-1] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.480 [TestNG-test-Login Test HRM-3] LogUtils - Clicked on the element By.xpath: //button[@type='submit']
+[INFO ] 2024-12-02 10:15:53.542 [TestNG-test-Login Test HRM-1] LogUtils - Verify Equals: Required = Required
+[INFO ] 2024-12-02 10:15:53.558 [TestNG-test-Login Test HRM-1] LogUtils - Test case: TC_loginFailWithEmptyUsername is passed.
+[INFO ] 2024-12-02 10:15:53.561 [TestNG-test-Login Test HRM-1] LogUtils - Driver for Screenshot: ChromeDriver: chrome on windows (7de51225dec32b464019049cc94c6c41)
+[INFO ] 2024-12-02 10:15:53.579 [TestNG-test-Login Test HRM-2] LogUtils - Verify Equals: Required = Required
+[INFO ] 2024-12-02 10:15:53.581 [TestNG-test-Login Test HRM-2] LogUtils - Test case: TC_loginFailWithEmptyPassword is passed.
+[INFO ] 2024-12-02 10:15:53.582 [TestNG-test-Login Test HRM-2] LogUtils - Driver for Screenshot: ChromeDriver: chrome on windows (8bd6ca323d2eb316f30521bab9daa734)
+[INFO ] 2024-12-02 10:15:53.943 [TestNG-test-Login Test HRM-5] LogUtils - Test case: TC_loginSuccess is passed.
+[INFO ] 2024-12-02 10:15:53.943 [TestNG-test-Login Test HRM-5] LogUtils - Driver for Screenshot: ChromeDriver: chrome on windows (772f516df026239da01ade98d39d58fb)
+[INFO ] 2024-12-02 10:15:54.055 [TestNG-test-Login Test HRM-1] LogUtils - Screenshot taken: TC_loginFailWithEmptyUsername
+[INFO ] 2024-12-02 10:15:54.075 [TestNG-test-Login Test HRM-1] LogUtils - Screenshot taken current URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO ] 2024-12-02 10:15:54.163 [TestNG-test-Login Test HRM-2] LogUtils - Screenshot taken: TC_loginFailWithEmptyPassword
+[INFO ] 2024-12-02 10:15:54.198 [TestNG-test-Login Test HRM-2] LogUtils - Screenshot taken current URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO ] 2024-12-02 10:15:54.536 [TestNG-test-Login Test HRM-3] LogUtils - Test case: TC_loginFailWithInvalidUsername is passed.
+[INFO ] 2024-12-02 10:15:54.537 [TestNG-test-Login Test HRM-3] LogUtils - Driver for Screenshot: ChromeDriver: chrome on windows (a5ab6f65946da976ed7e49cabbe8ee09)
+[INFO ] 2024-12-02 10:15:54.807 [TestNG-test-Login Test HRM-5] LogUtils - Screenshot taken: TC_loginSuccess
+[INFO ] 2024-12-02 10:15:54.868 [TestNG-test-Login Test HRM-5] LogUtils - Screenshot taken current URL: https://opensource-demo.orangehrmlive.com/web/index.php/dashboard/index
+[INFO ] 2024-12-02 10:15:55.016 [TestNG-test-Login Test HRM-4] LogUtils - Test case: TC_loginFailWithInvalidPassword is passed.
+[INFO ] 2024-12-02 10:15:55.016 [TestNG-test-Login Test HRM-4] LogUtils - Driver for Screenshot: ChromeDriver: chrome on windows (79a8a25061838ee3b6eb3af6e9d353e1)
+[INFO ] 2024-12-02 10:15:55.123 [TestNG-test-Login Test HRM-3] LogUtils - Screenshot taken: TC_loginFailWithInvalidUsername
+[INFO ] 2024-12-02 10:15:55.131 [TestNG-test-Login Test HRM-3] LogUtils - Screenshot taken current URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO ] 2024-12-02 10:15:55.502 [TestNG-test-Login Test HRM-4] LogUtils - Screenshot taken: TC_loginFailWithInvalidPassword
+[INFO ] 2024-12-02 10:15:55.512 [TestNG-test-Login Test HRM-4] LogUtils - Screenshot taken current URL: https://opensource-demo.orangehrmlive.com/web/index.php/auth/login
+[INFO ] 2024-12-02 10:15:57.543 [main] LogUtils - ********** RUN FINISHED **********
+[INFO ] 2024-12-02 10:15:57.544 [main] LogUtils - =====> End Suite: Regression Tests CMS
