@@ -11,6 +11,7 @@ target/
 *.iws
 *.iml
 *.ipr
+*.log
 
 bin/
 out/
@@ -20,6 +21,7 @@ allure-results/
 exportdata/
 extentreports/
 logs/
+log4j2/
 target/
 test-output/
 reports/
