@@ -37,7 +37,7 @@
         <allure-environment-writer-version>1.0.0</allure-environment-writer-version>
         <java-telegram-bot-api-version>7.11.0</java-telegram-bot-api-version>
         <lombok-version>1.18.36</lombok-version>
-
+        <report-portal-version>5.4.4</report-portal-version>
         <!-- Test Suites -->
         <suite.login>src/testcases/resources/suites/LoginTest.xml</suite.login>
 
@@ -184,6 +184,18 @@
             <version>${java-compiler-plugin-version}</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>agent-java-testng</artifactId>
+            <version>${report-portal-version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>com.epam.reportportal</groupId>
+            <artifactId>logger-java-log4j</artifactId>
+            <version>5.2.2</version>
+            <scope>test</scope>
+        </dependency>
     </dependencies>
 
     <build>
