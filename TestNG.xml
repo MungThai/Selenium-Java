@@ -2,13 +2,13 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
 <suite name="N11 Test Suite" >
     <listeners>
-        <listener class-name="utils.listeners.TestListener"/>
-        <listener class-name="utils.listeners.AnnotationTransformer"/>
+        <!-- listener class-name="utils.listeners.TestListener"/ -->
+        <listener class-name="io.github.mung.listeners.AnnotationTransformer"/>
     </listeners>
 
     <test name="LoginTest">
         <classes>
-            <class name="tests.LoginTests"/>
+            <class name="io.github.mung.testcases.web.LoginTest"/>
         </classes>
     </test>
 </suite>
