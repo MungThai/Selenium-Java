@@ -9,8 +9,8 @@
     <version>1.0-SNAPSHOT</version>
 
     <properties>
-        <maven.compiler.source>22</maven.compiler.source>
-        <maven.compiler.target>22</maven.compiler.target>
+        <maven.compiler.source>21</maven.compiler.source>
+        <maven.compiler.target>21</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <aspectj.version>1.9.22.1</aspectj.version>
         <selenium-version>4.26.0</selenium-version>
@@ -39,7 +39,7 @@
         <lombok-version>1.18.36</lombok-version>
         <report-portal-version>5.4.4</report-portal-version>
         <aspectjweaver-version>1.9.22.1</aspectjweaver-version>
-
+        <slf4j-version>2.0.16</slf4j-version>
 
         <!-- Test Suites -->
         <suite.login>src/testcases/resources/suites/LoginTest.xml</suite.login>
@@ -207,6 +207,24 @@
             <artifactId>aspectjweaver</artifactId>
             <version>${aspectjweaver-version}</version>
             <scope>runtime</scope>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+        <dependency>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>${maven-surefire-plugin-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>${slf4j-version}</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-simple -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-simple</artifactId>
+            <version>${slf4j-version}</version>
         </dependency>
 
     </dependencies>
