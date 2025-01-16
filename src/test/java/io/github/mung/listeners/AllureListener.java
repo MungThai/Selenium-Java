@@ -10,7 +10,7 @@ import org.openqa.selenium.TakesScreenshot;
 
 import java.io.ByteArrayInputStream;
 
-import static io.github.mung.constants.FrameworkConstants.*;
+import static io.github.mung.constants.GlobalVars.*;
 
 public class AllureListener implements TestLifecycleListener {
     @Override

@@ -1,6 +1,6 @@
 package io.github.mung.listeners;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import org.testng.IRetryAnalyzer;
 import org.testng.ITestResult;
 
@@ -8,7 +8,7 @@ import org.testng.ITestResult;
 public class Retry implements IRetryAnalyzer {
 
     private int count = 0;
-    private static int maxTry =Integer.parseInt(FrameworkConstants.RETRY_TEST_FAIL);  // Run the failed test 2 times
+    private static int maxTry =Integer.parseInt(GlobalVars.RETRY_TEST_FAIL);  // Run the failed test 2 times
 
     @Override
     public boolean retry(ITestResult iTestResult) {

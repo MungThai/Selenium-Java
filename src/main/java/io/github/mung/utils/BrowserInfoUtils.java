@@ -2,7 +2,7 @@ package io.github.mung.utils;
 
 import org.testng.Reporter;
 
-import static io.github.mung.constants.FrameworkConstants.BROWSER;
+import static io.github.mung.constants.GlobalVars.BROWSER;
 
 public class BrowserInfoUtils {
 

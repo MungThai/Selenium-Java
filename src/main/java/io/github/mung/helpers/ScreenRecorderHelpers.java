@@ -1,6 +1,6 @@
 package io.github.mung.helpers;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import org.monte.media.av.Format;
 import org.monte.media.av.FormatKeys;
 import org.monte.media.av.Registry;
@@ -34,7 +34,7 @@ public class ScreenRecorderHelpers extends ScreenRecorder {
                         Rational.valueOf(15), QualityKey, 1.0f, KeyFrameIntervalKey, 15 * 60),
                 new Format(MediaTypeKey, MediaType.VIDEO, EncodingKey, "black", FrameRateKey, Rational.valueOf(30)),
                 null,
-                new File("./" + FrameworkConstants.EXPORT_VIDEO_PATH + "/"));
+                new File("./" + GlobalVars.EXPORT_VIDEO_PATH + "/"));
     }
 
     @Override

@@ -1,6 +1,6 @@
 package io.github.mung.dataprovider;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.helpers.ExcelHelpers;
 import io.github.mung.helpers.PropertiesHelpers;
 import io.github.mung.helpers.SystemHelpers;
@@ -42,7 +42,7 @@ public class DataProviderManager {
     @DataProvider(name = "getSignInDataHashTable", parallel = true)
     public static Object[][] getSignInData() {
         ExcelHelpers excelHelpers = new ExcelHelpers();
-        Object[][] data = excelHelpers.getDataHashTable(SystemHelpers.getCurrentDir() + FrameworkConstants.EXCEL_DATA_FILE_PATH, "SignIn", 1, 2);
+        Object[][] data = excelHelpers.getDataHashTable(SystemHelpers.getCurrentDir() + GlobalVars.EXCEL_DATA_FILE_PATH, "SignIn", 1, 2);
         System.out.println("getSignInData: " + data);
         return data;
     }
@@ -50,7 +50,7 @@ public class DataProviderManager {
     @DataProvider(name = "getClientDataHashTable", parallel = true)
     public static Object[][] getClientData() {
         ExcelHelpers excelHelpers = new ExcelHelpers();
-        Object[][] data = excelHelpers.getDataHashTable(SystemHelpers.getCurrentDir() + FrameworkConstants.EXCEL_DATA_FILE_PATH, "Client", 1, 2);
+        Object[][] data = excelHelpers.getDataHashTable(SystemHelpers.getCurrentDir() + GlobalVars.EXCEL_DATA_FILE_PATH, "Client", 1, 2);
         System.out.println("getClientData: " + data);
         return data;
     }

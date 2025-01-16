@@ -1,0 +1,61 @@
+version: "3.8"
+
+services:
+  selenium-hub:
+    image: selenium/hub:latest
+    container_name: selenium-hub-appium
+    restart: always
+    environment:
+      - GRID_BROWSER_TIMEOUT=120
+      - GRID_TIMEOUT=180
+    ports:
+      - "4442:4442"
+      - "4443:4443"
+      - "4444:4444"
+
+  real_device:
+    image: appium/appium:latest
+    restart: always
+    depends_on:
+      - selenium-hub
+    privileged: true
+    ports:
+      - "4723:4723" # One port for each device
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ~/.android:/root/.android
+    environment:
+      - CONNECT_TO_GRID=true
+      - APPIUM_HOST:127.0.0.1
+      - APPIUM_PORT:4723
+      - SELENIUM_HOST=selenium_hub
+      - SELENIUM_PORT=4444
+      - CUSTOM_NODE_CONFIG=false
+      ## Below is to disable additional security check to use some advanced features
+      - RELAXED_SECURITY=true
+      ## Below env variables for connecting to Android devices by Air
+      # - REMOTE_ADB=true
+      # - ANDROID_DEVICES=<android_device_host>:<android_device_port> [,<android_device_host>:<android_device_port>]
+      # - REMOTE_ADB_POLLING_SEC=60 (default: 5, interval between polling the list of connected devices in order to connect to lost remote devices)
+
+  android_13:
+    image: budtmo/docker-android:latest
+    restart: always
+    privileged: true
+    depends_on:
+      - selenium-hub
+      - real_device
+    #    ports wont allow to scale up
+    #    ports:
+    #      - "6080:6080"
+    #      - "5554:5554"
+    #      - "4725:4723" # one port for each device
+    #      - "5555:5555"
+    volumes:
+      - ./video:/tmp/video
+    environment:
+      - DEVICE=Nexus 5
+      - CONNECT_TO_GRID=true
+      - APPIUM=true
+      - SELENIUM_HOST=selenium_hub
+      - AUTO_RECORD=true

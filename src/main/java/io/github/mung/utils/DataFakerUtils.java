@@ -1,6 +1,6 @@
 package io.github.mung.utils;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import net.datafaker.Faker;
 
 import java.util.Locale;
@@ -13,7 +13,7 @@ public class DataFakerUtils {
 
     public static Faker getFaker() {
         if (faker == null) {
-            faker = new Faker(new Locale(FrameworkConstants.LOCATE));
+            faker = new Faker(new Locale(GlobalVars.LOCATE));
         }
         return faker;
     }

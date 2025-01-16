@@ -1,10 +1,10 @@
 package io.github.mung.utils;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.mail.EmailWithAttachmentsSender;
 import jakarta.mail.MessagingException;
 
-import static io.github.mung.constants.FrameworkConstants.REPORT_TITLE;
+import static io.github.mung.constants.GlobalVars.REPORT_TITLE;
 import static io.github.mung.mail.EmailConfig.*;
 
 public class EmailSendUtils {
@@ -15,18 +15,18 @@ public class EmailSendUtils {
 
     public static void sendEmail(int count_totalTCs, int count_passedTCs, int count_failedTCs, int count_skippedTCs) {
 
-        if (FrameworkConstants.SEND_EMAIL_TO_USERS.trim().equalsIgnoreCase(FrameworkConstants.YES)) {
+        if (GlobalVars.SEND_EMAIL_TO_USERS.trim().equalsIgnoreCase(GlobalVars.YES)) {
             System.out.println("****************************************");
             System.out.println("Send Email - START");
             System.out.println("****************************************");
 
-            System.out.println("File name: " + FrameworkConstants.getExtentReportFilePath());
+            System.out.println("File name: " + GlobalVars.getExtentReportFilePath());
 
             String messageBody = getTestCasesCountInFormat(count_totalTCs, count_passedTCs, count_failedTCs,
                     count_skippedTCs);
             //System.out.println(messageBody);
 
-            String attachmentFile_ExtentReport = FrameworkConstants.getExtentReportFilePath();
+            String attachmentFile_ExtentReport = GlobalVars.getExtentReportFilePath();
 
             try {
                 EmailWithAttachmentsSender.sendEmailWithAttachments(SERVER, PORT, FROM, PASSWORD, TO, SUBJECT, messageBody,

@@ -1,6 +1,6 @@
 package io.github.mung.helpers;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.utils.LogUtils;
 import org.apache.commons.io.FileUtils;
 import org.monte.media.av.Format;
@@ -49,7 +49,7 @@ public class CaptureHelpers extends ScreenRecorder {
 
     public static void startRecord(String methodName) {
         //Tạo thư mục để lưu file video vào
-        File file = new File("./" + FrameworkConstants.EXPORT_VIDEO_PATH + "/" + methodName + "/");
+        File file = new File("./" + GlobalVars.EXPORT_VIDEO_PATH + "/" + methodName + "/");
         Dimension screenSize = Toolkit.getDefaultToolkit().getScreenSize();
         int width = screenSize.width;
         int height = screenSize.height;
@@ -80,7 +80,7 @@ public class CaptureHelpers extends ScreenRecorder {
 
     public static void captureScreenshot(WebDriver driver, String screenName) {
         try {
-            String path = SystemHelpers.getCurrentDir() + FrameworkConstants.EXPORT_CAPTURE_PATH;
+            String path = SystemHelpers.getCurrentDir() + GlobalVars.EXPORT_CAPTURE_PATH;
             File file = new File(path);
             if (!file.exists()) {
                 LogUtils.info("No Folder: " + path);
@@ -112,7 +112,7 @@ public class CaptureHelpers extends ScreenRecorder {
             throw new RuntimeException(e);
         }
 
-        String path = SystemHelpers.getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
+        String path = SystemHelpers.getCurrentDir() + GlobalVars.EXTENT_REPORT_FOLDER + File.separator + "images";
         File folder = new File(path);
         if (!folder.exists()) {
             folder.mkdir();
@@ -139,7 +139,7 @@ public class CaptureHelpers extends ScreenRecorder {
             throw new RuntimeException(e);
         }
 
-        String path = SystemHelpers.getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
+        String path = SystemHelpers.getCurrentDir() + GlobalVars.EXTENT_REPORT_FOLDER + File.separator + "images";
 
         File folder = new File(path);
         if (!folder.exists()) {
@@ -156,7 +156,7 @@ public class CaptureHelpers extends ScreenRecorder {
             throw new RuntimeException(e);
         }
 
-        String filePathRelative = FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images" + File.separator + screenshotName + dateName + ".png";
+        String filePathRelative = GlobalVars.EXTENT_REPORT_FOLDER + File.separator + "images" + File.separator + screenshotName + dateName + ".png";
         return filePathRelative;
     }
 
@@ -170,7 +170,7 @@ public class CaptureHelpers extends ScreenRecorder {
             throw new RuntimeException(e);
         }
 
-        String path = SystemHelpers.getCurrentDir() + FrameworkConstants.EXTENT_REPORT_FOLDER + File.separator + "images";
+        String path = SystemHelpers.getCurrentDir() + GlobalVars.EXTENT_REPORT_FOLDER + File.separator + "images";
 
         File folder = new File(path);
         if (!folder.exists()) {

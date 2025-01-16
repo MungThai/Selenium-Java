@@ -1,6 +1,6 @@
 package io.github.mung.drivers;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.enums.Target;
 import io.github.mung.exceptions.TargetNotValidException;
 import io.github.mung.utils.LogUtils;
@@ -14,17 +14,17 @@ import java.net.URL;
 public class TargetFactory {
 
     public WebDriver createInstance() {
-        Target target = Target.valueOf(FrameworkConstants.TARGET.toUpperCase());
+        Target target = Target.valueOf(GlobalVars.TARGET.toUpperCase());
         WebDriver webdriver;
 
         switch (target) {
             case LOCAL:
                 //Create new driver from Enum setup in BrowserFactory class
-                webdriver = BrowserFactory.valueOf(FrameworkConstants.BROWSER.toUpperCase()).createDriver();
+                webdriver = BrowserFactory.valueOf(GlobalVars.BROWSER.toUpperCase()).createDriver();
                 break;
             case REMOTE:
                 //Create new driver on Cloud (Selenium Grid, Docker) from method below
-                webdriver = createRemoteInstance(BrowserFactory.valueOf(FrameworkConstants.BROWSER.toUpperCase()).getOptions());
+                webdriver = createRemoteInstance(BrowserFactory.valueOf(GlobalVars.BROWSER.toUpperCase()).getOptions());
                 break;
             default:
                 throw new TargetNotValidException(target.toString());
@@ -33,10 +33,10 @@ public class TargetFactory {
     }
 
     public WebDriver createInstance(String browser) {
-        Target target = Target.valueOf(FrameworkConstants.TARGET.toUpperCase());
+        Target target = Target.valueOf(GlobalVars.TARGET.toUpperCase());
         WebDriver webdriver;
 
-        String browserName = (FrameworkConstants.BROWSER != null && !FrameworkConstants.BROWSER.isEmpty()) ? FrameworkConstants.BROWSER
+        String browserName = (GlobalVars.BROWSER != null && !GlobalVars.BROWSER.isEmpty()) ? GlobalVars.BROWSER
                 : browser;
 
         Allure.step("\uD83E\uDD16 Run on browser: " + browserName);
@@ -59,7 +59,7 @@ public class TargetFactory {
     private RemoteWebDriver createRemoteInstance(MutableCapabilities capability) {
         RemoteWebDriver remoteWebDriver = null;
         try {
-            String gridURL = String.format("http://%s:%s", FrameworkConstants.REMOTE_URL, FrameworkConstants.REMOTE_PORT);
+            String gridURL = String.format("http://%s:%s", GlobalVars.REMOTE_URL, GlobalVars.REMOTE_PORT);
             LogUtils.info("Remote URL: " + gridURL);
             remoteWebDriver = new RemoteWebDriver(new URL(gridURL), capability);
         } catch (java.net.MalformedURLException e) {

@@ -1,6 +1,6 @@
 package io.github.mung.mail;
 
-import static io.github.mung.constants.FrameworkConstants.REPORT_TITLE;
+import static io.github.mung.constants.GlobalVars.REPORT_TITLE;
 
 public class EmailConfig {
     //Remember to create an app password (App Password) for Gmail before sending

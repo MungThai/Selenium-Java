@@ -1,6 +1,6 @@
 package io.github.mung.utils;
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import org.zeroturnaround.zip.ZipUtil;
 
 import java.io.File;
@@ -19,13 +19,13 @@ public class ZipUtils {
 
     /* Make Zip file of Extent Reports in Project Root folder */
     public static void zipReportFolder() {
-        if (FrameworkConstants.ZIP_FOLDER.toLowerCase().trim().equals(FrameworkConstants.YES)) {
-            if ((FrameworkConstants.ZIP_FOLDER_PATH != null || !FrameworkConstants.ZIP_FOLDER_PATH.isEmpty()) && (FrameworkConstants.ZIP_FOLDER_NAME != null || !FrameworkConstants.ZIP_FOLDER_NAME.isEmpty())) {
-                ZipUtil.pack(new File(FrameworkConstants.ZIP_FOLDER_PATH), new File(FrameworkConstants.ZIP_FOLDER_NAME));
-                LogUtils.info("Zipped " + FrameworkConstants.ZIPPED_EXTENT_REPORTS_FOLDER + " successfully !!");
+        if (GlobalVars.ZIP_FOLDER.toLowerCase().trim().equals(GlobalVars.YES)) {
+            if ((GlobalVars.ZIP_FOLDER_PATH != null || !GlobalVars.ZIP_FOLDER_PATH.isEmpty()) && (GlobalVars.ZIP_FOLDER_NAME != null || !GlobalVars.ZIP_FOLDER_NAME.isEmpty())) {
+                ZipUtil.pack(new File(GlobalVars.ZIP_FOLDER_PATH), new File(GlobalVars.ZIP_FOLDER_NAME));
+                LogUtils.info("Zipped " + GlobalVars.ZIPPED_EXTENT_REPORTS_FOLDER + " successfully !!");
             } else {
-                ZipUtil.pack(new File(FrameworkConstants.EXTENT_REPORT_FOLDER_PATH), new File(FrameworkConstants.ZIPPED_EXTENT_REPORTS_FOLDER));
-                LogUtils.info("Zipped " + FrameworkConstants.ZIPPED_EXTENT_REPORTS_FOLDER + " successfully !!");
+                ZipUtil.pack(new File(GlobalVars.EXTENT_REPORT_FOLDER_PATH), new File(GlobalVars.ZIPPED_EXTENT_REPORTS_FOLDER));
+                LogUtils.info("Zipped " + GlobalVars.ZIPPED_EXTENT_REPORTS_FOLDER + " successfully !!");
             }
         }
     }

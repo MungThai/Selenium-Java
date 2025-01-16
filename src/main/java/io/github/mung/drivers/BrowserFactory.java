@@ -5,7 +5,7 @@ import org.openqa.selenium.MutableCapabilities;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
@@ -44,7 +44,7 @@ public enum BrowserFactory {
 
             options.setAcceptInsecureCerts(true);
 
-            if (Boolean.valueOf(FrameworkConstants.HEADLESS) == true) {
+            if (Boolean.valueOf(GlobalVars.HEADLESS) == true) {
                 options.addArguments("--headless=new");
                 options.addArguments("--disable-gpu");
                 options.addArguments("--no-sandbox");
@@ -79,7 +79,7 @@ public enum BrowserFactory {
 
             options.setAcceptInsecureCerts(true);
 
-            if (Boolean.valueOf(FrameworkConstants.HEADLESS) == true) {
+            if (Boolean.valueOf(GlobalVars.HEADLESS) == true) {
                 options.addArguments("--headless=new");
                 options.addArguments("--disable-gpu");
                 options.addArguments("--no-sandbox");
@@ -103,7 +103,7 @@ public enum BrowserFactory {
 
             options.setAcceptInsecureCerts(true);
 
-            if (Boolean.valueOf(FrameworkConstants.HEADLESS) == true) {
+            if (Boolean.valueOf(GlobalVars.HEADLESS) == true) {
                 options.addArguments("-headless");
                 options.addArguments("--width=1920");
                 options.addArguments("--height=1080");
@@ -124,7 +124,7 @@ public enum BrowserFactory {
             SafariOptions options = new SafariOptions();
             options.setAutomaticInspection(false);
 
-            if (TRUE.equals(Boolean.valueOf(FrameworkConstants.HEADLESS)))
+            if (TRUE.equals(Boolean.valueOf(GlobalVars.HEADLESS)))
                 throw new HeadlessNotSupportedException(options.getBrowserName());
 
             return options;

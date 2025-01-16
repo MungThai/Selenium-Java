@@ -1,7 +1,7 @@
 package io.github.mung.pages;
 
 
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.utils.LogUtils;
 import org.openqa.selenium.By;
 
@@ -18,11 +18,11 @@ public class LoginPage extends BasePage {
     private By invalidCredentialError = By.xpath("//p[contains(@class, 'oxd-alert-content-text')]");
 
     public void openLoginPage() {
-        openWebsite(FrameworkConstants.URL_HRM);
+        openWebsite(GlobalVars.URL_HRM);
     }
 
     public void login(String username, String password) {
-        openWebsite(FrameworkConstants.URL_HRM);
+        openWebsite(GlobalVars.URL_HRM);
         setText(usernmeField, username);
         setText(passwordField, password);
         clickElement(loginButton);

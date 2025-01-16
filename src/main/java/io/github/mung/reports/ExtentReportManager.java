@@ -6,13 +6,12 @@ import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.markuputils.Markup;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
 import com.aventstack.extentreports.reporter.configuration.Theme;
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.drivers.DriverManager;
 import io.github.mung.enums.AuthorType;
 import io.github.mung.enums.Category;
 import io.github.mung.utils.*;
 
-import io.github.mung.utils.*;
 import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 
@@ -40,13 +39,13 @@ public class ExtentReportManager {
         if (Objects.isNull(extentReports)) {
             extentReports = new ExtentReports();
 
-            if (FrameworkConstants.OVERRIDE_REPORTS.trim().equals(FrameworkConstants.NO)) {
-                LogUtils.info("OVERRIDE EXTENT REPORTS = " + FrameworkConstants.OVERRIDE_REPORTS);
-                link = FrameworkConstants.EXTENT_REPORT_FOLDER_PATH + File.separator + DateUtils.getCurrentDateTimeCustom("_") + "_" + FrameworkConstants.EXTENT_REPORT_FILE_NAME;
+            if (GlobalVars.OVERRIDE_REPORTS.trim().equals(GlobalVars.NO)) {
+                LogUtils.info("OVERRIDE EXTENT REPORTS = " + GlobalVars.OVERRIDE_REPORTS);
+                link = GlobalVars.EXTENT_REPORT_FOLDER_PATH + File.separator + DateUtils.getCurrentDateTimeCustom("_") + "_" + GlobalVars.EXTENT_REPORT_FILE_NAME;
                 LogUtils.info("Link Extent Report: " + link);
             } else {
-                LogUtils.info("OVERRIDE EXTENT REPORTS = " + FrameworkConstants.OVERRIDE_REPORTS);
-                link = FrameworkConstants.EXTENT_REPORT_FILE_PATH;
+                LogUtils.info("OVERRIDE EXTENT REPORTS = " + GlobalVars.OVERRIDE_REPORTS);
+                link = GlobalVars.EXTENT_REPORT_FILE_PATH;
                 LogUtils.info("Link Extent Report: " + link);
             }
 
@@ -61,10 +60,10 @@ public class ExtentReportManager {
             ExtentSparkReporter spark = new ExtentSparkReporter(link);
             extentReports.attachReporter(spark);
             spark.config().setTheme(Theme.STANDARD);
-            spark.config().setDocumentTitle(FrameworkConstants.REPORT_TITLE);
-            spark.config().setReportName(FrameworkConstants.REPORT_TITLE);
-            extentReports.setSystemInfo("Framework Name", FrameworkConstants.REPORT_TITLE);
-            extentReports.setSystemInfo("Author", FrameworkConstants.AUTHOR);
+            spark.config().setDocumentTitle(GlobalVars.REPORT_TITLE);
+            spark.config().setReportName(GlobalVars.REPORT_TITLE);
+            extentReports.setSystemInfo("Framework Name", GlobalVars.REPORT_TITLE);
+            extentReports.setSystemInfo("Author", GlobalVars.AUTHOR);
 
             LogUtils.info("Extent Reports is installed.");
         }

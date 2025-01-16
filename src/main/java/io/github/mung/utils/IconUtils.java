@@ -2,7 +2,7 @@ package io.github.mung.utils;
 
 import io.github.mung.enums.Browser;
 
-import static io.github.mung.constants.FrameworkConstants.*;
+import static io.github.mung.constants.GlobalVars.*;
 
 public class IconUtils {
 

@@ -4,7 +4,7 @@ import com.aventstack.extentreports.Status;
 import com.github.automatedowl.tools.AllureEnvironmentWriter;
 import com.google.common.collect.ImmutableMap;
 import io.github.mung.annotations.FrameworkAnnotation;
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.drivers.DriverManager;
 import io.github.mung.enums.AuthorType;
 import io.github.mung.enums.Browser;
@@ -23,7 +23,7 @@ import org.testng.*;
 import java.awt.*;
 import java.io.IOException;
 
-import static io.github.mung.constants.FrameworkConstants.*;
+import static io.github.mung.constants.GlobalVars.*;
 
 public class TestListener extends BaseTest implements ITestListener, ISuiteListener, IInvokedMethodListener {
 
@@ -95,11 +95,11 @@ public class TestListener extends BaseTest implements ITestListener, ISuiteListe
 
         //Write information in Allure Report
         AllureEnvironmentWriter.allureEnvironmentWriter(ImmutableMap.<String, String>builder()
-                .put("Target Execution", FrameworkConstants.TARGET)
-                .put("Global Timeout", String.valueOf(FrameworkConstants.WAIT_DEFAULT))
-                .put("Page Load Timeout", String.valueOf(FrameworkConstants.WAIT_PAGE_LOADED))
-                .put("Headless Mode", FrameworkConstants.HEADLESS).put("Local Browser", String.valueOf(Browser.CHROME))
-                .put("Remote URL", FrameworkConstants.REMOTE_URL).put("Remote Port", FrameworkConstants.REMOTE_PORT)
+                .put("Target Execution", GlobalVars.TARGET)
+                .put("Global Timeout", String.valueOf(GlobalVars.WAIT_DEFAULT))
+                .put("Page Load Timeout", String.valueOf(GlobalVars.WAIT_PAGE_LOADED))
+                .put("Headless Mode", GlobalVars.HEADLESS).put("Local Browser", String.valueOf(Browser.CHROME))
+                .put("Remote URL", GlobalVars.REMOTE_URL).put("Remote Port", GlobalVars.REMOTE_PORT)
                 .put("TCs Total", String.valueOf(count_totalTCs)).put("TCs Passed", String.valueOf(count_passedTCs))
                 .put("TCs Skipped", String.valueOf(count_skippedTCs)).put("TCs Failed", String.valueOf(count_failedTCs)).build());
 

@@ -1,0 +1,15 @@
+version: "3.8"
+services:
+  appium:
+    image: appium/appium
+    restart: always
+    privileged: true
+    ports:
+      - "4723:4723"
+    volumes:
+      - /dev/bus/usb:/dev/bus/usb
+      - ~/.android:/root/.android
+    environment:
+      - CONNECT_TO_GRID=false
+      - APPIUM_HOST=127.0.0.1
+      - APPIUM_PORT=4723

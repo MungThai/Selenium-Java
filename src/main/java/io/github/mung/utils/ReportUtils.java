@@ -8,7 +8,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import static io.github.mung.constants.FrameworkConstants.*;
+import static io.github.mung.constants.GlobalVars.*;
 
 
 public class ReportUtils {

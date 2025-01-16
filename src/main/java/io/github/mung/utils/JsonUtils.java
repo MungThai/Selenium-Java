@@ -4,8 +4,11 @@ import com.fasterxml.jackson.core.type.TypeReference;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.jayway.jsonpath.DocumentContext;
 import com.jayway.jsonpath.JsonPath;
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.helpers.SystemHelpers;
+import org.json.simple.JSONObject;
+import org.json.simple.parser.JSONParser;
+import org.json.simple.parser.ParseException;
 
 import java.io.*;
 import java.util.HashMap;
@@ -32,7 +35,7 @@ public class JsonUtils {
     //Nó được thực thi trước phương thức main tại lúc khởi tạo lớp này.
     static {
         try {
-            CONFIGMAP = new ObjectMapper().readValue(new File(SystemHelpers.getCurrentDir() + FrameworkConstants.JSON_DATA_FILE_PATH), new TypeReference<HashMap<String, String>>() {
+            CONFIGMAP = new ObjectMapper().readValue(new File(SystemHelpers.getCurrentDir() + GlobalVars.JSON_DATA_FILE_PATH), new TypeReference<HashMap<String, String>>() {
             });
 
         } catch (FileNotFoundException e) {
@@ -66,6 +69,19 @@ public class JsonUtils {
             e.printStackTrace();
         }
         return stringBuffer;
+    }
+
+    public static String getJson(String filePath, String key){
+        JSONObject jsonObject = null;
+
+        try {
+            jsonObject = (JSONObject) new JSONParser().parse(new FileReader(filePath));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        } catch (ParseException e) {
+            throw new RuntimeException(e);
+        }
+        return (String) jsonObject.get(key);
     }
 
     public static void setJsonFile(String jsonPath) {

@@ -6,7 +6,7 @@ import com.pengrad.telegrambot.model.request.ParseMode;
 import com.pengrad.telegrambot.request.SendDocument;
 import com.pengrad.telegrambot.request.SendMessage;
 import com.pengrad.telegrambot.response.SendResponse;
-import io.github.mung.constants.FrameworkConstants;
+import io.github.mung.constants.GlobalVars;
 import io.github.mung.helpers.SystemHelpers;
 import io.github.mung.utils.LogUtils;
 
@@ -15,10 +15,10 @@ import java.io.File;
 
 public class TelegramManager {
 
-    private static String Token = FrameworkConstants.TELEGRAM_TOKEN;
-    private static String ChatId = FrameworkConstants.TELEGRAM_CHATID;
+    private static String Token = GlobalVars.TELEGRAM_TOKEN;
+    private static String ChatId = GlobalVars.TELEGRAM_CHATID;
     private static TelegramBot bot = new TelegramBot(Token);
-    private static File input = new File(FrameworkConstants.EXTENT_REPORT_FILE_PATH);
+    private static File input = new File(GlobalVars.EXTENT_REPORT_FILE_PATH);
 
     public static boolean sendFilePath(String filePath) {
         boolean success = false;
@@ -39,7 +39,7 @@ public class TelegramManager {
     }
 
     public static void sendReportPath() {
-        if (FrameworkConstants.SEND_REPORT_TO_TELEGRAM.toLowerCase().trim().equals(FrameworkConstants.YES)) {
+        if (GlobalVars.SEND_REPORT_TO_TELEGRAM.toLowerCase().trim().equals(GlobalVars.YES)) {
             boolean Success = false;
             try {
                 SendDocument request = new SendDocument(ChatId, input).parseMode(ParseMode.HTML).disableNotification(true);
